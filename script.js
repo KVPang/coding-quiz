@@ -13,22 +13,42 @@
 // scores and username saved on screen 
 
 //variables
-var gameStart = document.getElementById("start")
-var timerStart = document.querySelector(".time");
-var timesUp = document.getElementById("timesUp");
-var codeQs = document.getElementById("codeQs")
+
+var startBtn = document.getElementById("start");
+// var timerText = document.getElementById("timer");
+
+var questionText = document.getElementById("question-text")
+var currentQuestion = 0;
+var timePara = document.querySelector("#timePara");
+var timeLeft = 10;
+var timer =
 var optionA =  document.getElementById("btnA");
 var optionB =  document.getElementById("btnB");
 var optionC =  document.getElementById("btnC");
 var optionD =  document.getElementById("btnD");
-var secondsLeft = 30;
+
+
+//event listeners 
+gameStart.addEventListener("click", )
+optionA.addEventListener("click", chooseA);
+optionB.addEventListener("click", chooseB);
+optionC.addEventListener("click", chooseC);
+optionD.addEventListener("click", chooseD);
 
 
 //timer 
+var counter = 10;
+var myInterval = setInterval(function(){
+    counter --;
+    if(counter===0) {
+        clearInterval(myInterval)
+
+    }
+},2000)
 
 
 //quiz questions
-let questions = [
+var questions = [
 {   question: "What is the description for this arithmetic operator: %",
     options: ["A. Oculus", "B. Expelliarmus", "C. Modulus", "4. Imperio"],
     answer: "C. Modulus"
@@ -53,14 +73,6 @@ let questions = [
 ];
 
 
-//event listeners 
-gameStart.addEventListener("click", )
-optionA.addEventListener("click", chooseA);
-optionB.addEventListener("click", chooseB);
-optionC.addEventListener("click", chooseC);
-optionD.addEventListener("click", chooseD);
-
-//reset button
 document.querySelector("#resetButton").addEventListener("click", function() {
 
 for(var i =0; i<1; i++) {
@@ -70,5 +82,3 @@ for(var i =0; i<1; i++) {
     } else {
 
     }};
-
-//functions

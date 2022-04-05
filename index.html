@@ -9,43 +9,48 @@
     </head>
 
     <body>
+        <!-- View Highscores -->
         <header>
-            <h1 style="text-align:center;">JavaScript Quiz</h1>
-            <button id="start" class="pinkButton">Start!</button>
+            <button class="button">View Highscores</button>
+        
+            <!-- timer -->
+            <h3 id="timer">Timer: 0</h3>
+            <!-- <p><span id="timePara">10</span> seconds left!</p> -->
+            <h1>JavaScript Quiz</h1>
 
+            <div id="homepage"></div>
+            <br>
         </header>
-        <main>
-            <div class="text-center">
-            
-                <!-- timer -->
-                <h1 class="time" style="text-align:center;"></h1>
-                <div id="timer"></div>
 
-            <!-- coding quiz -->
-            <div id="codeQs">
-                <p>
-                    <button id="btnA" class="lightbtn"></button>
-                </p>
-                <p>
-                    <button id="btnB" class="lightbtn"></button>
-                </p>
-                <p>
-                    <button id="btnC" class="lightbtn"></button>
-                </p>
-                <p>
-                    <button id="btnD" class="lightbtn"></button>
-                </p>
-            </div>
+        <!-- start button -->
+        <button id="start" class="startButton">Start!</button>
 
-            <!-- score saving -->
-            <aside class="scoreKeep">
-                <button id="reset" class="resetButton">Reset</button>
-            </aside>
+<!-- coding quiz -->
+<div id="quizQuestions">
+    <div id="questionText">Question</div><br>
+    <p>
+        <button id="btnA" class="btn"></button>
+    </p>
+    <p>
+        <button id="btnB" class="btn"></button>
+    </p>
+    <p>
+        <button id="btnC" class="btn"></button>
+    </p>
+    <p>
+        <button id="btnD" class="btn"></button>
+    </p>
+</div>
 
-            <script src="script.js"></script>
+<div id="check-answers"></div>
 
+<!-- score saving -->
+<aside class="scoreKeep">
+    <button id="reset" class="resetButton">Reset</button>
+</aside>
 
-            <footer></footer>
-        </main>
-    </body>
-</html>
+<!-- JavaScript Link -->
+<script src="script.js"></script>
+
+<footer></footer>
+</body></html>
