@@ -27,4 +27,4 @@ THEN I can save my initials and my score
 
 ## Links 
 - GitHub: https://github.com/KVPang/coding-quiz
-- Deployed: 
+- Deployed: https://kvpang.github.io/coding-quiz/
