@@ -4,13 +4,13 @@
 // if the question is answered incorrectly, time is taken from the clock
 // when all questions are answered or the timer reaches 0
 // then the game is over
-//
+
 // when the game is over
 // then the user can enter their initials and score (saved)
 // scores and username saved on screen
 
 
-
+// game questions
 var questions = [
   {
     question: "What is the description for this arithmetic operator: %",
@@ -54,11 +54,14 @@ var questions = [
   },
 ];
 
+//variables
 var counter = 75;
 let number = 0;
 var startBtn = document.querySelector("#start");
-
 var myInterval;
+
+
+document.getElementById("quizQuestions").style.color = "blue";
 
 startBtn.addEventListener("click", function () {
   myInterval = setInterval(function () {
@@ -95,6 +98,7 @@ const LoadQuestion = () => {
   }
 };
 
+//check question answers
 const CheckResponse = (id, event) => {
   console.log(event);
   if (event.target.textContent === questions[number].answer) {
@@ -111,6 +115,7 @@ const CheckResponse = (id, event) => {
   }
 };
 
+//when the game is over 
 function endGame() {
   clearInterval(myInterval);
   console.log(counter);

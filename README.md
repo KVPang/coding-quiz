@@ -18,5 +18,13 @@ THEN I can save my initials and my score
 ```
 
 ## Mock-Up
+![mockup](./Images/Photo(1).JPG)
+
+## Features
+- HTML
+- CSS
+- JavaScript
 
 ## Links 
+- GitHub: https://github.com/KVPang/coding-quiz
+- Deployed: 
