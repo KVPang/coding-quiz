@@ -1,6 +1,4 @@
 // start button - click (add eventListener)
-// var startBtn = document.querySelector("#start");
-// startBtn.addEventListener("click", startGame);
 
 // timer that starts after clicking the start button
 // when the 1st question is answered, another question appears
@@ -13,38 +11,63 @@
 // scores and username saved on screen 
 
 //variables
+//timer 
+var counter = 10;
+let number = 0;
+var startBtn = document.querySelector('#start');
 
-var startBtn = document.getElementById("start");
-// var timerText = document.getElementById("timer");
+startBtn.addEventListener("click",function(){
+    var myInterval = setInterval(function(){
+        var timer = document.querySelector("#timer");
+        timer.textContent = counter;
+        counter--;
+        if(counter==-1) {
+            clearInterval(myInterval)
+        }
+    },1000)
+    LoadQuestion(); //function call to load the first question
+});
+
 
 var questionText = document.getElementById("question-text")
 var currentQuestion = 0;
 var timePara = document.querySelector("#timePara");
 var timeLeft = 10;
-var timer =
+
 var optionA =  document.getElementById("btnA");
 var optionB =  document.getElementById("btnB");
 var optionC =  document.getElementById("btnC");
 var optionD =  document.getElementById("btnD");
 
 
+const LoadQuestion = ()=>{
+    let display = document.getElementById("quizQuestions");
+    let quest = document.createElement("div")
+   quest.innerHTML = questions[number].question; 
+    display.appendChild(quest);
+//    let opt = "";
+   for (let i = 0; i<questions[number].options.length; i++) {
+     let item = document.createElement("div");
+     item.id = "option" + i; 
+     item.innerHTML = questions[number].options[i];
+     display.appendChild(item);
+     document.getElementById("option" + i).addEventListener("click", function(){
+         CheckResponse("option" + i);
+     }
+     )
+   }
+}
+
+const CheckResponse = (id)=>{
+
+}
+
 //event listeners 
-gameStart.addEventListener("click", )
-optionA.addEventListener("click", chooseA);
-optionB.addEventListener("click", chooseB);
-optionC.addEventListener("click", chooseC);
-optionD.addEventListener("click", chooseD);
-
-
-//timer 
-var counter = 10;
-var myInterval = setInterval(function(){
-    counter --;
-    if(counter===0) {
-        clearInterval(myInterval)
-
-    }
-},2000)
+// // gameStart.addEventListener("click", )
+// optionA.addEventListener("click", chooseA);
+// optionB.addEventListener("click", chooseB);
+// optionC.addEventListener("click", chooseC);
+// optionD.addEventListener("click", chooseD);
 
 
 //quiz questions
@@ -73,12 +96,7 @@ var questions = [
 ];
 
 
-document.querySelector("#resetButton").addEventListener("click", function() {
-
-for(var i =0; i<1; i++) {
-    var response = (questions[i].prompt);
-    if(response == questions[i].answer){
-        score++
-    } else {
-
-    }};
+// for (let index = 0; index < array.length; index++) {
+//     const element = array[index];
+    
+// }
